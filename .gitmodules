@@ -1,0 +1,3 @@
+[submodule "alfredciii_wp_theme"]
+	path = alfredciii_wp_theme
+	url = git@github.com:Simonmoush/alfredciii.git
