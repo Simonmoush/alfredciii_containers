@@ -26,9 +26,7 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-	  - type: bind
-	  source: ./mysql
-	  target: /var/lib/mysql
+      - db:/var/lib/mysql
 
 volumes:
   wordpress:
