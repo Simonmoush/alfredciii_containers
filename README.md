@@ -3,9 +3,9 @@ Not much... but here's how i'm starting the pod right now
 
 ```bash
 podman-compose up -d --abort-on-container-exit
+```
 
 so there's the basic pod for wordpress deveopment with the alfredciii theme folder mounted in the wp containers themes folder
-```
 
 ## In Progress
 Trying to figure out how to import (and eventually export) a wordpress database.
