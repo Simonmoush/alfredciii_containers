@@ -1,5 +1,5 @@
-# What we have so far
-Not much... but here's how i'm starting the pod right now
+## What we have so far
+Not much... but here's how I'm starting the pod right now
 
 ```bash
 podman-compose up -d --abort-on-container-exit
