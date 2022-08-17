@@ -11,6 +11,8 @@ so there's the basic pod for wordpress deveopment with the alfredciii theme fold
 
 start and enter a container using the wordpress:cli image and let it share volumes and networks with the running wordpress container. Also give it access to the folder data_snapshots. 
 
+put the exported xml file in this data_snapshots folder
+
 ```bash
 podman run -it --rm --mount=type=bind,src=./data_snapshots,dst=/home/www-data/data_snapshots --volumes-from wordpress-container-id --network container:wordpress-container-id --env-file=wp.env wordpress:cli bash
 ```
