@@ -7,9 +7,19 @@ podman-compose up -d --abort-on-container-exit
 
 so there's the basic pod for wordpress deveopment with the alfredciii theme folder mounted in the wp containers themes folder
 
-## In Progress
-Trying to figure out how to import (and eventually export) a wordpress database.
-We're thinking to use WP_CLI tools. There is a docker image with those tools which we can run in a container that shares volumes and network with the pod. Those scripts can do the db importing and then the container can exit... I think.
+## In Progress: import data
+
+start and enter a container using the wordpress:cli image and let it share volumes and networks with the running wordpress container. Also give it access to the folder data_snapshots. 
+
+```bash
+podman run -it --rm --mount=type=bind,src=./data_snapshots,dst=/home/www-data/data_snapshots --volumes-from wordpress-container-id --network container:wordpress-container-id --env-file=wp.env wordpress:cli bash
+```
+
+From within the wordpress:cli container run the following command:
+
+```bash
+	wp import WXR-file-to-import.xml --authors=create --path=/var/www/html/
+```
 
 ## Kinda Done
 ### Basic Git Structure
@@ -23,3 +33,4 @@ next thing to do here is make branches for dev and production and probably other
 ## Other Goals
 * tests
 * use gitlab to automate everything based on git activity
+* linting using pre-commit and eslint
