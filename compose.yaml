@@ -12,10 +12,9 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress:/var/www/html
       - type: bind
         source: ./alfredciii_wp_theme
-        target: /var/www/html/wp-content/themes/
+        target: /var/www/html/wp-content/themes/alfredciii_wp_theme
 
   db:
     image: mysql:5.7
@@ -25,9 +24,3 @@ services:
       MYSQL_USER: exampleuser
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - db:/var/lib/mysql
-
-volumes:
-  wordpress:
-  db:
