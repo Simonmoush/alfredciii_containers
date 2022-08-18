@@ -45,6 +45,14 @@ From within the wordpress:cli container run the following command:
 	- looks like maybe using the --uidmap flag is what I need
 - maybe change permalink settings as well
 
+#### Thoughts about the database
+
+Instead of manually importing the data, or even automating it with Gitlab we should include default/dummy/test_fixture data for this particular app in the actual db image 
+By using build stages we can run the above commands in the build phase and the imported data will become part of the container image.
+when we eventually have our own container registry we can spin up images we've already built that are basically snapshots at a particular feature that we can spin up without any importing.
+*we think we can avoid mounting any containers to transfer the db data while in the build stage with the dockerfile's ADD command*
+
+
 # Git Structure
 
 This repo has everything related to the containers/infrastructure required for alfred's site. I guess because containers are so awesome that just means a container file and that env file.
