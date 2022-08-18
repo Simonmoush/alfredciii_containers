@@ -16,6 +16,7 @@ services:
       - type: bind
         source: ./alfredciii_wp_theme
         target: /var/www/html/wp-content/themes/alfredciii_wp_theme
+        read_only: true
 
   db:
     image: mysql:5.7

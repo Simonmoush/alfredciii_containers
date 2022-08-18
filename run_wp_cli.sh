@@ -1,0 +1,1 @@
+podman run -it --rm --user=33 --mount=type=bind,src=./data_snapshots,dst=/home/www-data/data_snapshots --volumes-from=alfredciii_containers_wordpress_1:rw --network=container:alfredciii_containers_wordpress_1 --env-file=wp.env wordpress:cli bash
