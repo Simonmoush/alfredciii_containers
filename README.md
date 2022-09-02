@@ -1,6 +1,5 @@
 # Usage
 
-
 ## Start the pod
 
 ```bash
@@ -8,7 +7,7 @@ podman-compose up -d --abort-on-container-exit
 ```
 
 This creates a wordpress container and a mysql container.
-___It also gives the wordpress container access to alfredciii_wp_theme by mounting it in the the containers wp-content/themes
+It also gives the wordpress container access to alfredciii_wp_theme by mounting it in the the containers wp-content/themes
 
 if it's the first time you run it a volume for each container to persist changes to files and the database
 if it's not the first time those volumes will be re-attached
