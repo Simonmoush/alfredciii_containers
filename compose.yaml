@@ -9,8 +9,8 @@ services:
     env_file: wp.env
     volumes:
       - wordpress:/var/www/html
-      - type: bind
-        source: ./alfredciii_wp_theme
+      - type: volume
+        source: wp_theme
         target: /var/www/html/wp-content/themes/alfredciii_wp_theme
         read_only: true
 
@@ -26,3 +26,4 @@ services:
 volumes:
   wordpress:
   db:
+  wp_theme:
